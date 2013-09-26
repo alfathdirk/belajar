@@ -1,0 +1,78 @@
+
+<html>
+
+	<script type="text/javascript" src="jquery-1.7.2.min.js"></script> 
+	<script type="text/javascript">
+	$(function(evt){
+	// var strongContent = $('strong').text();
+	// var pContent = $('p').text();
+
+	// $('strong').text(pContent);
+
+	// $('p').text(strongContent);
+
+	$('ul li:nth-child(1)').click(function(evt){
+		$('table').append('<tr class="row"><td class="cell">E1</td><td class="cell">E2</td><td class="cell">E3</td><td class="cell">E4</td><td class="cell">E5</td></tr>');
+		return evt.preventDefault;
+
+	});
+
+	
+	
+	
+});
+</script>
+	<body>
+		<header>
+			<ul class="nav">
+				<li><a href="http://xinix.co.id/satu">Satu</a></li>
+				<li><a href="http://xinix.co.id/dua">Dua</a></li>
+				<li><a href="http://xinix.co.id/tiga">Tiga</a></li>
+				<li><a href="http://xinix.co.id/empat">Empat</a></li>
+				<li><a href="http://xinix.co.id/lima">Lima</a></li>
+			</ul>
+		</header>
+		<div class="layout-body">
+			<table>
+				<tr class="row">
+					<td class="cell">A1</td>
+					<td class="cell">A2</td>
+					<td class="cell">A3</td>
+					<td class="cell">A4</td>
+					<td class="cell">A5</td>
+				</tr>
+				<tr class="row">
+					<td class="cell">B1</td>
+					<td class="cell">B2</td>
+					<td class="cell">B3</td>
+					<td class="cell">B4</td>
+					<td class="cell">B5</td>
+				</tr>
+				<tr class="row">
+					<td class="cell">C1</td>
+					<td class="cell">C2</td>
+					<td class="cell">C3</td>
+					<td class="cell">C4</td>
+					<td class="cell">C5</td>
+				</tr>
+				<tr class="row">
+					<td class="cell">D1</td>
+					<td class="cell">D2</td>
+					<td class="cell">D3</td>
+					<td class="cell">D4</td>
+					<td class="cell">D5</td>
+				</tr>
+				<tr class="row">
+					<td class="cell">E1</td>
+					<td class="cell">E2</td>
+					<td class="cell">E3</td>
+					<td class="cell">E4</td>
+					<td class="cell">E5</td>
+				</tr>
+			</table>
+		</div>
+		<footer>
+			Copyright Xinix Technology 2012
+		</footer>
+	</body>
+</html>

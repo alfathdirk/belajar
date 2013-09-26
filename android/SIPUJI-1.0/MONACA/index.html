@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="plugins/plugin-loader.js"></script>
+        <link rel="stylesheet" href="plugins/plugin-loader.css">
+        <style type="text/css">
+        #main-bg {
+            background : transparent url(bg.png) top center no-repeat;
+            background-size : contain;
+            position: absolute;
+            top:5%;
+            left:5%;
+            width: 90%;
+            height: 90%;
+        }
+        .ui-page {
+            background: transparent;
+        }
+        .ui-content{
+            background: transparent;
+        }
+        .ui-grid-a{
+            width:90%;
+        }
+        #main-login {
+            bottom:10%;
+        }
+        .center-wrapper{
+            text-align: center;
+        }
+        .center-wrapper * {
+            margin: 0 auto;
+        }
+        .ui-hide-label{
+            margin-bottom:20px;
+        }
+        #username, #password{
+            width:96%;
+        }
+		.ui-br {
+			border-bottom:none;
+			border-bottom-width:0;
+			border-bottom-style:none;
+		}
+        </style>
+        <script>
+            // Set virtual screen width size to 640 pixels (横幅640pxに設定)
+            monaca.viewport({width: 640});
+            document.addEventListener("deviceready", onDeviceReady, false);
+
+            // Cordova is loaded and it is now safe to make calls Cordova methods
+            //
+            function onDeviceReady() {
+                //checkConnection();
+            }
+        
+            function checkConnection() {
+                var networkState = navigator.connection.type;
+        
+                var states = {};
+                states[Connection.UNKNOWN]  = 'Unknown connection';
+                states[Connection.ETHERNET] = 'Ethernet connection';
+                states[Connection.WIFI]     = 'WiFi connection';
+                states[Connection.CELL_2G]  = 'Cell 2G connection';
+                states[Connection.CELL_3G]  = 'Cell 3G connection';
+                states[Connection.CELL_4G]  = 'Cell 4G connection';
+                states[Connection.CELL]     = 'Cell generic connection';
+                states[Connection.NONE]     = 'No network connection';
+        
+                alert('Connection type: ' + states[networkState]);
+            }
+            
+            function goTo(page) {
+                monaca.pushPage("user.html?p="+page)
+            }
+        </script>
+    </head>
+    <body>
+    <div id="main-bg"></div>
+    <div id="main-login" data-position="fixed">
+    <form action="http://10.0.2.2/sipuji/" method="post">
+        <div class="center-wrapper">
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <div data-role="fieldcontain" class="ui-hide-label">
+                        <label for="username">Nama Pengguna:</label>
+                        <input type="text" name="username" id="username" data-theme="d" placeholder="Nama Pengguna"/>
+                    </div>
+                    <input id="prauji" type="button" value="PRA UJI" data-theme="e" data-icon="check" onclick="goTo('prauji')" />
+                </div>
+                <div class="ui-block-b">
+                    <div data-role="fieldcontain" class="ui-hide-label">
+                        <label for="password">Kata Sandi:</label>
+                    	<input type="password" name="password" id="password" data-theme="d" placeholder="Kata Sandi"/>
+                    </div>
+                    <input id="uji" type="button" value="UJI" data-theme="e" data-icon="check" onclick="goTo('uji')" />
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+while read lines; 
+
+do 
+	if [ "$lines" = "State                                   : Offline (OFL)" ];  then
+		Z="$lines"; 
+		mailq.sendmail -v sysadmin@hostune.com < jajal.mail
+		# echo "$lines";	
+	else
+		echo "no match";
+	fi
+	# echo -e "$line\n"; 
+# echo "$z";
+done < file.txt

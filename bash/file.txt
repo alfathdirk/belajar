@@ -1,0 +1,68 @@
+LSI Logic IR Configuration Utility 2.10.00
+Read configuration has been initiated for controller 0
+------------------------------------------------------------------------
+Controller information
+------------------------------------------------------------------------
+  Controller type                         : SAS1064E
+  BIOS version                            : 6.30.00.00
+  Firmware version                        : 1.30.00.00
+  Channel description                     : 1 Serial Attached SCSI
+  Initiator ID                            : 112
+  Maximum physical devices                : 62
+  Concurrent commands supported           : 277
+  Slot                                    : 1
+  Bus                                     : 1
+  Device                                  : 0
+  Function                                : 0
+  RAID Support                            : Yes
+------------------------------------------------------------------------
+IR Volume information
+------------------------------------------------------------------------
+IR volume 1
+  Volume ID                               : 5
+  Status of volume                        : Okay (OKY)
+  RAID level                              : 1
+  Size (in MB)                            : 953674
+  Physical hard disks (Target ID)         : 7 6
+------------------------------------------------------------------------
+Physical device information
+------------------------------------------------------------------------
+Initiator at ID #112
+Target on ID #6
+  Device is a Hard disk
+  Enclosure #                             : 1
+  Slot #                                  : 1
+  Connector ID                            : 1
+  Target ID                               : 6
+  State                                   : Online (ONL)
+  Size (in MB)/(in sectors)               : 953869/1953525168
+  Manufacturer                            : ATA     
+  Model Number                            : WDC WD1003FBYX-0
+  Firmware Revision                       : 1V02
+  Serial No                               :      WD-WMAW30636936
+  Drive Type                              : SATA
+  Protocol                                : SATA
+Target on ID #7
+  Device is a Hard disk
+  Enclosure #                             : 1
+  Slot #                                  : 0
+  Connector ID                            : 0
+  Target ID                               : 7
+  States                                   : Ofline (ONL)
+  Size (in MB)/(in sectors)               : 953869/1953525168
+  Manufacturer                            : ATA     
+  Model Number                            : WDC WD1003FBYX-0
+  Firmware Revision                       : 1V02
+  Serial No                               :      WD-WMAW30622461
+  Drive Type                              : SATA
+  Protocol                                : SATA
+------------------------------------------------------------------------
+Enclosure information
+------------------------------------------------------------------------
+Enclosure#                                : 1
+  Logical ID                              : 1ec49df8:50050760
+  Numslots                                : 4
+  StartSlot                               : 0
+  Start TargetID                          : 0
+  Start Bus                               : 0
+------------------------------------------------------------------------

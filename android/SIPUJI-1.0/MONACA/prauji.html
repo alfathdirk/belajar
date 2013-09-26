@@ -1,0 +1,883 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="plugins/plugin-loader.js"></script>
+    <link rel="stylesheet" href="plugins/plugin-loader.css">
+    <style type="text/css">
+    .container{
+        left:5%;
+        width: 90%;
+    }
+    
+    #prauji-table {
+       font-size: 60%; 
+    }
+    .ui-table-reflow .ui-responsive {
+        display: table-row-group;
+    }
+    .table-stroke thead th {
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+    .table-stroke tbody th,
+    .table-stroke tbody td {
+        border-bottom: 1px solid rgba(0, 0, 0, .05);
+    }
+    .short-select {
+        width: 90px;
+    }
+    .ui-btn-inner .ui-btn-text {
+        font-size: 9px;
+        padding: 0;
+    }
+    .ui-mini {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    div.ui-slider-switch.ui-slider-mini {
+        height: 20px;
+        width: 4em;
+    }
+    .ui-slider-mini span.ui-slider-label {
+        font-size: 11px;
+    }
+    div.ui-slider-switch.ui-slider-mini .ui-slider-inneroffset {
+        margin: 0 11px 0 10px;
+    }
+    div.ui-slider-switch.ui-slider-mini .ui-slider-handle {
+        height: 18px;
+        margin: 1px 0 0 -9px;
+        width: 18px;
+    }
+    input.ui-input-text.ui-mini, textarea.ui-input-text.ui-mini {
+        margin: 0.25em 0;
+    }
+    input.ui-mini, .ui-mini input, textarea.ui-mini {
+        font-size: 100%;
+    }
+    input.ui-input-text, textarea.ui-input-text {
+        line-height: 1.6;
+        padding: 0.4em;
+        width: 70%;
+    }
+    input.ui-input-text, textarea.ui-input-text {
+        display: inline;
+    }
+    label.ui-input-text {
+        display: inline;
+        font-size: 100%;
+        line-height: 1.4;
+        margin: 0 0 0.3em;
+    }
+	.ui-br {
+		border-bottom:none;
+		border-bottom-width:0;
+		border-bottom-style:none;
+	}
+	.ui-btn-down-c {
+		background:#FF4000
+	}
+	.ui-btn-active {
+		background:#008C46
+	}
+	.ui-btn-up-d {
+		background:#FF4000
+	}
+    </style>
+    <script>
+        // Set virtual screen width size to 320 pixels 
+        monaca.viewport({width: 320});
+
+        function goToBack() {
+            monaca.pushPage("confirm.html?p=prauji")
+        }
+        
+        function goToHome() {
+            monaca.pushPage("user.html?p=prauji")
+        }
+    </script>
+</head>
+<body>
+    <div data-role="page"> 
+        <div data-role="content" class="container">
+            <h4>Formulir Pra Uji</h4>
+            <table data-role="table" id="prauji-table" data-mode="reflow" class="ui-responsive table-stroke ui-table ui-table-reflow">
+                <thead>
+                    <tr>
+                        <th data-priority="1">No.</th>
+                        <th data-priority="persist">BAGIAN YANG DIPERIKSA</th>
+                        <th data-priority="2"><div class="short-select">SPESIFIKASI</div></th>
+                        <th data-priority="3">KONDISI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1.</th>
+                        <th>IDENTITAS KENDARAAN</th>
+                        <td><div class="short-select"></div></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>a.</td>
+                        <td>No. Uji/No. Kendaraan</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-1a1" id="select-1a1" data-mini="true" data-theme="d">
+                            	<option value="Sesuai">Sesuai: Buku Uji</option>
+                            	<option value="Tidak Sesuai" class="select-red" selected>Tidak Sesuai: Buku Uji</option>
+                            </select>
+                        </div>
+                            
+                        </td>
+                        <td>
+                            <select name="select-1a2" id="select-1a2" data-mini="true" data-theme="d" data-role="slider">
+                            	<option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>b.</td>
+                        <td>No. Rangka/No. Mesin</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-1b1" id="select-1b1" data-mini="true" data-theme="d">
+                                <option value="Sesuai">Sesuai: Buku Uji</option>
+                            	<option value="Tidak Sesuai">Tidak Sesuai: Buku Uji</option>
+                            </select>
+                        </div>   
+                        </td>
+                        <td>
+                            <select name="select-1b2" id="select-1b2" data-mini="true" data-theme="d" data-role="slider">
+                            	<option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>2.</th>
+                        <th>SISTEM PENERANGAN</th>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>a.</td>
+                        <td>Lampu Penunjuk Arah</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-2a1" id="select-2a1" data-mini="true" data-theme="d">
+                                <option value="Menyala">Menyala</option>
+                            	<option value="Tidak Menyala">Tidak Menyala</option>
+                            </select>
+                        </div>                           
+                        </td>
+                        <td>
+                            <select name="select-2a2" id="select-2a2" data-mini="true" data-theme="d" data-role="slider">
+                            	<option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>b.</td>
+                        <td>Lampu Rem</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-2b1" id="select-2b1" data-mini="true" data-theme="d">
+                                <option value="Menyala">Menyala</option>
+                                <option value="Tidak Menyala">Tidak Menyala</option>
+                            </select>
+                        </div>                           
+                        </td>
+                        <td>
+                            <select name="select-2b2" id="select-2b2" data-mini="true" data-theme="d" data-role="slider">
+                            	<option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>c.</td>
+                        <td>Lampu Mundur</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-2c1" id="select-2c1" data-mini="true" data-theme="d">
+                                <option value="Menyala">Menyala</option>
+                                <option value="Tidak Menyala">Tidak Menyala</option>
+                            </select>
+                        </div>                            
+                        </td>
+                        <td>
+                            <select name="select-2c2" id="select-2c2" data-mini="true" data-theme="d" data-role="slider">
+                            	<option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>d.</td>
+                        <td>Lampu Posisi</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-2d1" id="select-2d1" data-mini="true" data-theme="d">
+                                <option value="Menyala">Menyala</option>
+                                <option value="Tidak Menyala">Tidak Menyala</option>
+                            </select>
+                        </div>                          
+                        </td>
+                        <td>
+                            <select name="select-2d2" id="select-2d2" data-mini="true" data-theme="d" data-role="slider">
+                            	<option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>3.</th>
+                        <th>RUMAH DAN BODY</th>
+                        <td><div class="short-select"></div></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>a.</td>
+                        <td>Kondisi Rumah/Body</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-3a1" id="select-3a1" data-mini="true" data-theme="d">
+                                <option value="Baik">Baik, Tidak Keropos</option>
+                                <option value="Keropos">Baik, Keropos</option>
+                                <option value="Tidak Keropos">Tidak Baik, Tidak Keropos</option>
+                                <option value="Tidak Baik">Tidak Baik, Keropos</option>
+                            </select>
+                        </div>                            
+                        </td>
+                        <td>
+                            <select name="select-3a2" id="select-3a2" data-mini="true" data-theme="d" data-role="slider">
+                            	<option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>b.</td>
+                        <td>Perisai Kolong</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-3b1" id="select-3b1" data-mini="true" data-theme="d">
+                                <option value="Ada">Ada</option>
+                                <option value="Tidak Ada">Tidak Ada</option>
+                            </select>
+                        </div>                            
+                        </td>
+                        <td>
+                            <select name="select-3b2" id="select-3b2" data-mini="true" data-theme="d" data-role="slider">
+                            	<option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>c.</td>
+                        <td>Samb. Tempelan/Gandengan</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-3c1" id="select-3c1" data-mini="true" data-theme="d">
+                                <option value="Aus">Aus</option>
+                                <option value="Tidak Aus">Tidak Aus</option>
+                            </select>
+                        </div>                            
+                        </td>
+                        <td>
+                            <select name="select-3c2" id="select-3c2" data-mini="true" data-theme="d" data-role="slider">
+                            	<option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>4.</th>
+                        <th>RODA-RODA</th>
+                        <td><div class="short-select"></div></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>a.</td>
+                        <td>Ukuran Ban Sumbu I</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-4a1" id="select-4a1" data-mini="true" data-theme="d">
+                                <option value="Sesuai">Sesuai: Buku Uji Spesifikasi Pabrik</option>
+                                <option value="Tidak Sesuai">Tidak Sesuai: Buku Uji Spesifikasi Pabrik</option>
+                            </select>
+                        </div>                            
+                        </td>
+                        <td>
+                            <select name="select-4a2" id="select-4a2" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>b.</td>
+                        <td>Ukuran Ban Sumbu II</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-4b1" id="select-4b1" data-mini="true" data-theme="d">
+                                <option value="Sesuai">Sesuai: Buku Uji Spesifikasi Pabrik</option>
+                                <option value="Tidak Sesuai">Tidak Sesuai: Buku Uji Spesifikasi Pabrik</option>
+                            </select>
+                        </div>                           
+                        </td>
+                        <td>
+                            <select name="select-4b2" id="select-4b2" data-mini="true" data-theme="d" data-role="slider">
+                            	<option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>c.</td>
+                        <td>Ukuran Ban Sumbu III</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-4c1" id="select-4c1" data-mini="true" data-theme="d">
+                                <option value="Sesuai">Sesuai: Buku Uji Spesifikasi Pabrik</option>
+                                <option value="Tidak Sesuai">Tidak Sesuai: Buku Uji Spesifikasi Pabrik</option>
+                            </select>
+                        </div>                            
+                        </td>
+                        <td>
+                            <select name="select-4c2" id="select-4c2" data-mini="true" data-theme="d" data-role="slider">
+                            	<option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>d.</td>
+                        <td>Ukuran Ban Sumbu IV</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-4d1" id="select-4d1" data-mini="true" data-theme="d">
+                                <option value="Sesuai">Sesuai: Buku Uji Spesifikasi Pabrik</option>
+                                <option value="Tidak Sesuai">Tidak Sesuai: Buku Uji Spesifikasi Pabrik</option>
+                            </select>
+                        </div>                           
+                        </td>
+                        <td>
+                            <select name="select-4d2" id="select-4d2" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>e.</td>
+                        <td>Kedalam Alur Ban Luar</td>
+                        <td>
+                        <div class="short-select">
+                            <input type="text" name="input-4e1" id="input-4e1" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-4e1">mm</label>
+                        </div>                           
+                        </td>
+                        <td>
+                            <select name="select-4e2" id="select-4e2" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>f.</td>
+                        <td>Penguatan Roda</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-4f1" id="select-4f1" data-mini="true" data-theme="d">
+                                <option value="Kendor">Kendor</option>
+                                <option value="Tidak Kendor">Tidak Kendor</option>
+                            </select>
+                        </div>                           
+                        </td>
+                        <td>
+                            <select name="select-4f2" id="select-4f2" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>5.</th>
+                        <th>DIMENSI KENDARAAN</th>
+                        <td><div class="short-select"></div></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>a.</td>
+                        <td>Ukuran Utama</td>
+                        <td><div class="short-select"></div></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Panjang</td>
+                        <td>
+                        <div class="short-select">
+                            <input type="text" name="input-5a11" id="input-5a11" value="" data-mini="true" data-inline="true" type="number" />
+                        </div>                           
+                        </td>
+                        <td>
+                            <select name="select-5a12" id="select-5a12" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Lebar</td>
+                        <td>
+                        <div class="short-select">
+                            <input type="text" name="input-5a21" id="input-5a21" value="" data-mini="true" data-inline="true" type="number" />
+                        </div>                            
+                        </td>
+                        <td>
+                            <select name="select-5a22" id="select-5a22" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Tinggi</td>
+                        <td>
+                        <div class="short-select">
+                            <input type="text" name="input-5a31" id="input-5a31" value="" data-mini="true" data-inline="true" type="number" />
+                        </div>                           
+                        </td>
+                        <td>
+                            <select name="select-5a32" id="select-5a32" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Julur Depan (FOH)</td>
+                        <td>
+                        <div class="short-select">
+                            <input type="text" name="input-5a41" id="input-5a41" value="" data-mini="true" data-inline="true" type="number" />
+                        </div>                            
+                        </td>
+                        <td>
+                            <select name="select-5a42" id="select-5a42" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Jalur Belakang (ROH)</td>
+                        <td>
+                        <div class="short-select">
+                            <input type="text" name="input-5a51" id="input-5a51" value="" data-mini="true" data-inline="true" type="number" />
+                        </div>                           
+                        </td>
+                        <td>
+                            <select name="select-5a52" id="select-5a52" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>b.</td>
+                        <td>Jarak Sumbu</td>
+                        <td><div class="short-select"></div></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Sumbu I-II</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-5b11" id="select-5b11" data-mini="true" data-theme="d">
+                                <option value="Sesuai">Sesuai: Buku Uji Ketentuan Spesifikasi</option>
+                                <option value="Tidak Sesuai">Tidak Sesuai: Buku Uji Ketentuan Spesifikasi</option>
+                            </select>
+                        </div>
+                        </td>
+                        <td>
+                            <select name="select-5b12" id="select-5b12" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Sumbu II-III</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-5b21" id="select-5b21" data-mini="true" data-theme="d">
+                                <option value="Sesuai">Sesuai: Buku Uji Ketentuan Spesifikasi</option>
+                                <option value="Tidak Sesuai">Tidak Sesuai: Buku Uji Ketentuan Spesifikasi</option>
+                            </select>
+                        </div>
+                        </td>
+                        <td>
+                            <select name="select-5b22" id="select-5b22" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Sumbu III-IV</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-5b31" id="select-5b31" data-mini="true" data-theme="d">
+                                <option value="Sesuai">Sesuai: Buku Uji Ketentuan Spesifikasi</option>
+                                <option value="Tidak Sesuai">Tidak Sesuai: Buku Uji Ketentuan Spesifikasi</option>
+                            </select>
+                        </div>
+                        </td>
+                        <td>
+                            <select name="select-5b32" id="select-5b32" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>c.</td>
+                        <td>Dimensi Bak Muatan</td>
+                        <td><div class="short-select"></div></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Panjang</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-5c11" id="select-5c11" data-mini="true" data-theme="d">
+                               <option value="Sesuai">Sesuai: Buku Uji Ketentuan Spesifikasi</option>
+                                <option value="Tidak Sesuai">Tidak Sesuai: Buku Uji Ketentuan Spesifikasi</option>
+                            </select>
+                        </div>
+                        </td>
+                        <td>
+                            <select name="select-5c12" id="select-5c12" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Lebar</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-5c21" id="select-5c21" data-mini="true" data-theme="d">
+                                <option value="Sesuai">Sesuai: Buku Uji Ketentuan Spesifikasi</option>
+                                <option value="Tidak Sesuai">Tidak Sesuai: Buku Uji Ketentuan Spesifikasi</option>
+                            </select>
+                        </div>
+                        </td>
+                        <td>
+                            <select name="select-5c22" id="select-5c22" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Tinggi</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-5c31" id="select-5c31" data-mini="true" data-theme="d">
+                                <option value="Sesuai">Sesuai: Buku Uji Ketentuan Spesifikasi</option>
+                                <option value="Tidak Sesuai">Tidak Sesuai: Buku Uji Ketentuan Spesifikasi</option>
+                            </select>
+                        </div>
+                        </td>
+                        <td>
+                            <select name="select-5c32" id="select-5c32" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>d.</td>
+                        <td>Dimensi Tangki</td>
+                        <td><div class="short-select"></div></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Panjang</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-5d11" id="select-5d11" data-mini="true" data-theme="d">
+                                <option value="Sesuai">Sesuai: Tera/Kapasitas</option>
+                                <option value="Tidak Sesuai">Tidak Sesuai: Tera/Kapasitas</option>
+                            </select>
+                        </div>
+                        </td>
+                        <td>
+                            <select name="select-5d12" id="select-5d12" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Lebar</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-5d21" id="select-5d21" data-mini="true" data-theme="d">
+                                <option value="Sesuai">Sesuai: Tera/Kapasitas</option>
+                                <option value="Tidak Sesuai">Tidak Sesuai: Tera/Kapasitas</option>
+                            </select>
+                        </div>
+                        </td>
+                        <td>
+                            <select name="select-5d22" id="select-5d22" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Tinggi</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-5d31" id="select-5d31" data-mini="true" data-theme="d">
+                                <option value="Sesuai">Sesuai: Tera/Kapasitas</option>
+                                <option value="Tidak Sesuai">Tidak Sesuai: Tera/Kapasitas</option>
+                            </select>
+                        </div>
+                        </td>
+                        <td>
+                            <select name="select-5d32" id="select-5d32" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Julur Depan (FOH)</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-5d41" id="select-5d41" data-mini="true" data-theme="d">
+                                <option value="Sesuai">Sesuai: Tera/Kapasitas</option>
+                                <option value="Tidak Sesuai">Tidak Sesuai: Tera/Kapasitas</option>
+                            </select>
+                        </div>
+                        </td>
+                        <td>
+                            <select name="select-5d42" id="select-5d42" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Jalur Belakang (ROH)</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-5d41" id="select-5d41" data-mini="true" data-theme="d">
+                                <option value="Sesuai">Sesuai: Tera/Kapasitas</option>
+                                <option value="Tidak Sesuai">Tidak Sesuai: Tera/Kapasitas</option>
+                            </select>
+                        </div>
+                        </td>
+                        <td>
+                            <select name="select-5d42" id="select-5d42" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>6.</th>
+                        <th>PERALATAN-PERLENGKAPAN</th>
+                        <td><div class="short-select"></div></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>a.</td>
+                        <td>Penghapus Kaca Depan</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-6a1" id="select-6a1" data-mini="true" data-theme="d">
+                                <option value="Ada">Ada dan Berfungsi</option>
+                                <option value="Tidak Berfungsi">Ada dan Tidak Berfungsi</option>
+                                <option value="Tidak Ada">Tidak Ada</option>
+                            </select>
+                        </div>                            
+                        </td>
+                        <td>
+                            <select name="select-6a2" id="select-6a2" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>b.</td>
+                        <td>Kaca Spion</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-6b1" id="select-6b1" data-mini="true" data-theme="d">
+                                <option value="Ada">Ada dan Berfungsi</option>
+                                <option value="Tidak Berfungsi">Ada dan Tidak Berfungsi</option>
+                                <option value="Tidak Ada">Tidak Ada</option>
+                            </select>
+                        </div>                            
+                        </td>
+                        <td>
+                            <select name="select-6b2" id="select-6b2" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>c.</td>
+                        <td>Dongkrak</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-6c1" id="select-6c1" data-mini="true" data-theme="d">
+                                <option value="Ada">Ada dan Berfungsi</option>
+                                <option value="Tidak Berfungsi">Ada dan Tidak Berfungsi</option>
+                                <option value="Tidak Ada">Tidak Ada</option>
+                            </select>
+                        </div>                            
+                        </td>
+                        <td>
+                            <select name="select-6c2" id="select-6c2" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>d.</td>
+                        <td>Alat-alat/Kunci</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-6d1" id="select-6d1" data-mini="true" data-theme="d">
+                                <option value="Ada">Ada dan Berfungsi</option>
+                                <option value="Tidak Berfungsi">Ada dan Tidak Berfungsi</option>
+                                <option value="Tidak Ada">Tidak Ada</option>
+                            </select>
+                        </div>                            
+                        </td>
+                        <td>
+                            <select name="select-6d2" id="select-6d2" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>e.</td>
+                        <td>Ban Pengganti/Cadangan</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-6e1" id="select-6e1" data-mini="true" data-theme="d">
+                                <option value="Ada">Ada</option>
+                                <option value="Tidak Ada">Tidak Ada</option>
+                            </select>
+                        </div>                            
+                        </td>
+                        <td>
+                            <select name="select-6e2" id="select-6e2" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>f.</td>
+                        <td>Tanda Segitiga Pengaman</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-6f1" id="select-6f1" data-mini="true" data-theme="d">
+                                <option value="Ada">Ada dan Berfungsi</option>
+                                <option value="Tidak Berfungsi">Ada dan Tidak Berfungsi</option>
+                                <option value="Tidak Ada">Tidak Ada</option>
+                            </select>
+                        </div>                            
+                        </td>
+                        <td>
+                            <select name="select-6f2" id="select-6f2" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>g.</td>
+                        <td>Sabuk Keselamatan/Kotak Obat</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-6g1" id="select-6g1" data-mini="true" data-theme="d">
+                                <option value="Ada">Ada dan Berfungsi</option>
+                                <option value="Tidak Berfungsi">Ada dan Tidak Berfungsi</option>
+                                <option value="Tidak Ada">Tidak Ada</option>
+                            </select>
+                        </div>                            
+                        </td>
+                        <td>
+                            <select name="select-6g2" id="select-6g2" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>h.</td>
+                        <td>Engine Break/Rem Gas Buang</td>
+                        <td>
+                        <div class="short-select">
+                            <select name="select-6h1" id="select-6h1" data-mini="true" data-theme="d">
+                                <option value="Ada">Ada dan Berfungsi</option>
+                                <option value="Tidak Berfungsi">Ada dan Tidak Berfungsi</option>
+                                <option value="Tidak Ada">Tidak Ada</option>
+                            </select>
+                        </div>                            
+                        </td>
+                        <td>
+                            <select name="select-6h2" id="select-6h2" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>             
+                </tbody>
+            </table>
+            <br/>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <input id="submit" type="button" value="Simpan" data-theme="e" data-icon="check" data-mini="true" onclick="goToHome()" />
+                </div>
+                <div class="ui-block-b">
+                    <input id="cancel" type="button" value="Batal" data-theme="d" data-icon="delete" data-mini="true" onclick="goToBack()" />
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

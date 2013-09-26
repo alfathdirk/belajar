@@ -1,0 +1,51 @@
+#!/bin/sh
+
+if [ `id|sed -e s/uid=//g -e s/\(.*//g` -ne 0 ]; then
+    echo "This script requires root privileges"
+    exit 1
+fi
+
+# MYSQL_SCRIPT=service mysql 
+# NGINX_SCRIPT=$INSTALLDIR/mysql/scripts/ctl.sh
+
+help() {
+    clear
+    echo "======================================="
+	echo "usage :  $0 (start|stop|restart|status)"
+    echo "=============Alfathdirk================"
+	
+	cat <<EOF
+
+help       - this screen
+start      - start the service(s)
+stop       - stop  the service(s)
+restart    - restart or start the service(s)
+status     - show the status of the service(s)
+
+EOF
+}
+
+if [ "x$1" = "xhelp" ] || [ "x$1" = "x" ]; then
+    help
+fi
+
+if [ "x$1" = "xstart" ]; then
+    service mysql start && service nginx start
+fi
+
+if [ "x$1" = "xstop" ]; then
+    service mysql stop && service nginx stop
+fi
+
+if [ "x$1" = "xrestart" ]; then
+    service mysql restart && service nginx restart && service php5-fpm restart
+fi
+
+# clear
+if [ "x$1" = "xstatus" ]; then
+    ps aux | grep mysql
+    ps aux | grep nginx
+    # service mysql restart && service nginx restart && service php5-fpm restart
+fi
+# echo "wokeeeeh!!!!!!!!"
+

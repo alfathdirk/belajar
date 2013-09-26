@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="plugins/plugin-loader.js"></script>
+    <link rel="stylesheet" href="plugins/plugin-loader.css">
+    <style type="text/css">
+    .container{
+        left:5%;
+        width: 90%;
+    }
+    </style>
+    <script>
+        // Set virtual screen width size to 320 pixels 
+        monaca.viewport({width: 320});
+        
+        function goToUji1() {
+            monaca.pushPage("uji1.html")
+        }
+        function goToUji2() {
+            monaca.pushPage("uji2.html")
+        }
+        function goToUji3() {
+            monaca.pushPage("uji3.html")
+        }
+    </script>
+</head>
+<body>
+    <div data-role="page"> 
+        <div data-role="content" class="container">
+            <h4>Pilih Bagian Uji:</h4>
+            <fieldset data-role="controlgroup">
+             	<input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" onclick="goToUji1()" />
+             	<label for="radio-choice-1">EMISI GAS BUANG</label>   
+             	<input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2" onclick="goToUji2()" />
+             	<label for="radio-choice-2">LAMPU UTAMA</label> 
+             	<input type="radio" name="radio-choice" id="radio-choice-3" value="choice-3" onclick="goToUji3()" />
+             	<label for="radio-choice-3">SISTEM REM</label>
+            </fieldset>
+        </div>
+    </div>
+</body>
+</html>

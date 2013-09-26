@@ -1,0 +1,69 @@
+<html>
+<head>
+	<script type="text/javascript" src="jquery-1.7.2.min.js"></script> 
+	
+<style type="text/css">
+	div.background {display: none; width: 150px ;margin: 0 auto}
+	div.button {margin: 1px 500px;}
+	.aduh {border-radius: 0px;}
+</style>
+	
+</head>
+<body>
+<!-- <div class="button">
+<button class="show" >click Show</button>
+<button class="hide">click hide</button>
+</div>
+<div class="background">
+<div style="background:black;color:white" >Grab</div>
+<div style="background:red">On</div>
+<div style="background:yellow">Road</div>
+</div>-->
+
+<div>
+	<form>
+	<input type="text" name="kata" >
+	<input type="text" name="kata2">
+	</form>
+</div>
+<a href="http://google.com" title="hey">Google</a>
+<div  class="hasil"></div>
+</body>
+<script>
+$(function(){
+	// var strongContent = $('strong').text();
+	// var pContent = $('p').text();
+
+	// $('strong').text(pContent);
+
+	// $('p').text(strongContent);
+	// console.log ($('#textbox').keypress(function(e){
+	// 	if(e.which ==  90) alert('youve typeZ')
+	// }))
+
+	// $('button.show').click(function(){
+	// 	$('div.background').toggle('slow');
+
+	// $('button.hide').click(function(){
+	// 	$('div').hide('slow');
+	// 	});
+	// });
+// });
+// $('button').addClass('');
+
+
+	// $('input').blur(function(){
+	// $('div.hasil').text(parseInt($('input[name="kata"]').val())+parseInt($('input[name="kata2"]').val()));
+
+	// })
+
+$('a').click(function(){
+	$(this).attr({href:'http://facebook.com',title:'asd'});
+
+})
+	
+
+});
+
+</script>
+</html>

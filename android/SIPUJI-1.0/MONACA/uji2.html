@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="plugins/plugin-loader.js"></script>
+    <link rel="stylesheet" href="plugins/plugin-loader.css">
+    <style type="text/css">
+    .container{
+        left:5%;
+        width: 90%;
+    }
+    
+    #prauji-table {
+       font-size: 60%; 
+    }
+    .ui-table-reflow .ui-responsive {
+        display: table-row-group;
+    }
+    .table-stroke thead th {
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+    .table-stroke tbody th,
+    .table-stroke tbody td {
+        border-bottom: 1px solid rgba(0, 0, 0, .05);
+    }
+    .short-select {
+        width: 90px;
+    }
+    .ui-btn-inner .ui-btn-text {
+        font-size: 9px;
+        padding: 0;
+    }
+    .ui-mini {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    div.ui-slider-switch.ui-slider-mini {
+        height: 20px;
+        width: 4em;
+    }
+    .ui-slider-mini span.ui-slider-label {
+        font-size: 11px;
+    }
+    div.ui-slider-switch.ui-slider-mini .ui-slider-inneroffset {
+        margin: 0 11px 0 10px;
+    }
+    div.ui-slider-switch.ui-slider-mini .ui-slider-handle {
+        height: 18px;
+        margin: 1px 0 0 -9px;
+        width: 18px;
+    }
+    input.ui-input-text.ui-mini, textarea.ui-input-text.ui-mini {
+        margin: 0.25em 0;
+    }
+    input.ui-mini, .ui-mini input, textarea.ui-mini {
+        font-size: 100%;
+    }
+    input.ui-input-text, textarea.ui-input-text {
+        line-height: 1.6;
+        padding: 0.4em;
+        width: 70%;
+    }
+    input.ui-input-text, textarea.ui-input-text {
+        display: inline;
+    }
+    label.ui-input-text {
+        display: inline;
+        font-size: 100%;
+        line-height: 1.4;
+        margin: 0 0 0.3em;
+    }
+    </style>
+    <script>
+        // Set virtual screen width size to 320 pixels 
+        monaca.viewport({width: 320});
+
+        function goToBack() {
+            monaca.pushPage("confirm.html?p=uji")
+        }
+        
+        function goToHome() {
+            monaca.pushPage("user.html?p=uji")
+        }
+    </script>
+</head>
+<body>
+    <div data-role="page"> 
+        <div data-role="content" class="container">
+            <h4>Formulir Uji Lampu Utama</h4>
+            <table data-role="table" id="prauji-table" data-mode="reflow" class="ui-responsive table-stroke ui-table ui-table-reflow">
+                <thead>
+                    <tr>
+                        <th data-priority="1">No.</th>
+                        <th data-priority="persist">PENGUJIAN</th>
+                        <th data-priority="2">SPESIFIKASI</th>
+                        <th data-priority="3">HASIL UJI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>10.</th>
+                        <th>LAMPU UTAMA</th>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>a.</td>
+                        <td>Kuat Pancar Lampu Utama Jauh</td>
+                        <td>≥12.000 cd</td>
+                        <td>
+                            <label for="input-10a12">Kiri</label>
+                            <input type="text" name="input-10a12" id="input-10a12" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-10a12">cd</label>
+                            <br/>
+                            <label for="input-10a22">Kanan</label>
+                            <input type="text" name="input-10a22" id="input-10a22" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-10a22">cd</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>b.</td>
+                        <td>Sudut Deviasi Kanan</td>
+                        <td>0°34' (max)</td>
+                        <td>
+                            <input type="text" name="input-10b2" id="input-10b2" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-10b2">°</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>c.</td>
+                        <td>Sudut Deviasi Kiri</td>
+                        <td>1°09' (max)</td>
+                        <td>
+                            <input type="text" name="input-10c2" id="input-10c2" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-10c2">°</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>11.</th>
+                        <th>KINCUP RODA (MAX)</th>
+                        <td>(+/-)5 mm/meter</td>
+                        <td>
+                            <input type="text" name="input-11a2" id="input-11a2" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-11a2">mm/meter</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>12.</th>
+                        <th>BERAT SUMBU (KG)</th>
+                        <td>Sesuai Buku Uji Hasil Penimbangan</td>
+                        <td>
+                            <label for="input-12a12">S1</label>
+                            <input type="text" name="input-12a12" id="input-12a12" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-12a12">Kg</label>
+                            <br/>
+                            <label for="input-12a22">S2</label>
+                            <input type="text" name="input-12a22" id="input-12a22" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-12a22">Kg</label>
+                            <br/>
+                            <label for="input-12a32">S3</label>
+                            <input type="text" name="input-12a32" id="input-12a32" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-12a32">Kg</label>
+                            <br/>
+                            <label for="input-12a42">S4</label>
+                            <input type="text" name="input-12a42" id="input-12a42" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-12a42">Kg</label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div data-role="fieldcontain">
+                <label for="textarea">Cacatan Penguji:</label>
+                <textarea cols="40" rows="8" name="catatan2" id="catatan2"></textarea>
+            </div>
+            <br/>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <input id="submit" type="button" value="Simpan" data-theme="e" data-icon="check" data-mini="true" onclick="goToHome()" />
+                </div>
+                <div class="ui-block-b">
+                    <input id="cancel" type="button" value="Batal" data-theme="d" data-icon="delete" data-mini="true" onclick="goToBack()" />
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

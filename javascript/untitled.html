@@ -1,0 +1,55 @@
+<input type="text" data-regex="^[a-z]+$" />
+<input type="text" data-regex="^[0-9]+$" />
+
+<script type="text/javascript">
+
+$.fn.inputRegex = function() {
+    var regex = new RegExp($(this).attr('data-regex'));
+    
+    $(this).keypress(function(evt) {
+        
+        var w = evt.which || evt.charCode;
+        
+        var line = $(this).val();
+        var futureLine = line + String.fromCharCode(w);
+         
+        var matches = futureLine.match(regex);
+        if (!matches) {
+            evt.preventDefault();
+        }
+    });
+    
+    $(this).bind('paste', function(evt) {
+        var that = this;
+        var before = $(that).val();
+        
+        setTimeout(function() {
+            var val = $(that).val();
+            var matches = val.match(regex);
+            if (!matches) {
+                $(that).val(before);
+                var newv = '';
+                for(var i in val) {
+                    var v = val[i];
+                    newv += v;
+                    var matches = newv.match(regex);
+                    if (!matches) {
+                        newv = newv.substr(0, newv.length - 1);
+                        
+                    }
+                }
+                $(that).val(newv);
+            }            
+        });
+    });
+    
+    //abc123abc
+};
+
+$(function() {
+    $('input[data-regex]').each(function() { 
+        $(this).inputRegex(); 
+    });
+});
+
+</script>

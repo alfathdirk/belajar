@@ -1,0 +1,47 @@
+<html>
+<script type="text/javascript">
+var pattern = /(^\w+)\:\/\/(?:(\w+\.\w+\.))/
+
+function test(url, expected) {
+	var success = [];
+
+	result = url.match(pattern);
+	console.log(result);
+
+	var len = (result) ? result.length : 0 ;
+
+	if (result == null) {
+		console.error('Gagal')
+		return;
+	}
+
+	for(var i in result) {
+		if (result[i] == expected[i]) {
+			success.push(expected[i]); 
+		}
+	}
+	if (success.length == len) {
+		console.log('Berhasil');
+	} else {
+		console.log('Gagal');
+	}
+}
+
+url = "http://www.google.co.id/imgres?num=10&hl=en&safe=off&tbo=d&biw=975&bih=682&tbm=isch&tbnid=9aIUFR65vhBAHM:&imgrefurl=http://abdoelrauf.blogspot.com/2011/10/sumber-daya-alam.html&docid=wmi2KOmJDmaSrM&imgurl=http://2.bp.blogspot.com/-iKIP4nUFkPY/TuRcNIDUoeI/AAAAAAAAAEw/voyhM3wowc8/s1600/pengertian-sumber-daya-alam-indonesia.jpg&w=1200&h=900&ei=fU_BULWaKMfPrQeBl4HQCw&zoom=1&iact=hc&vpx=601&vpy=59&dur=8032&hovh=194&hovw=258&tx=101&ty=102&sig=116795109295178322133&page=1&tbnh=142&tbnw=202&start=0&ndsp=5&ved=1t:429,r:3,s:0,i:156";
+test(
+	url,
+	[url, 'http', 'www.google.co.id', null, 'imgres', 'num=10&hl=en&safe=off&tbo=d&biw=975&bih=682&tbm=isch&tbnid=9aIUFR65vhBAHM:&imgrefurl=http://abdoelrauf.blogspot.com/2011/10/sumber-daya-alam.html&docid=wmi2KOmJDmaSrM&imgurl=http://2.bp.blogspot.com/-iKIP4nUFkPY/TuRcNIDUoeI/AAAAAAAAAEw/voyhM3wowc8/s1600/pengertian-sumber-daya-alam-indonesia.jpg&w=1200&h=900&ei=fU_BULWaKMfPrQeBl4HQCw&zoom=1&iact=hc&vpx=601&vpy=59&dur=8032&hovh=194&hovw=258&tx=101&ty=102&sig=116795109295178322133&page=1&tbnh=142&tbnw=202&start=0&ndsp=5&ved=1t:429,r:3,s:0,i:156', null]
+	);
+url = 'http://xinix.co.id';
+test(
+	url,
+	[url, 'http', 'xinix.co.id', null, null, null, null]
+	);
+
+url = 'http://twitter.github.com/bootstrap/base-css.html#forms';
+test(
+	url,
+	[url, 'http', 'twitter.github.com', null, 'bootstrap/base-css.html', null, 'forms']
+	);
+</script>
+</html>

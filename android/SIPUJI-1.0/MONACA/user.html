@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="plugins/plugin-loader.js"></script>
+    <link rel="stylesheet" href="plugins/plugin-loader.css">
+    <style type="text/css">
+    .container{
+        top:5%;
+        width: 90%;
+    }
+    .container * {
+        margin: 0 auto;
+    }
+    .ui-block-a img {
+        width  : 90%;
+        height : auto;
+    }
+    #idtrans {
+        width: 90%;   
+    }
+    #f_user {
+        margin-top  : 30px;
+    }
+    </style>
+    <script>
+        // Set virtual screen width size to 320 pixels 
+        monaca.viewport({width: 320});
+        
+        function goTo() {
+            monaca.pushPage("confirm.html?p="+ monaca.queryParams['p'])
+        }
+        
+        function logout() {
+            monaca.pushPage("index.html")
+        }
+    </script>
+</head>
+<body>
+    <div data-role="page"> 
+        <div data-role="content" class="container">
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <img alt="Petugas" src="anonym.jpg" />
+                </div>
+                <div class="ui-block-b">
+                    <h3>Asep Superglu</h3>
+                    <small><i>Nama Penguji</i></small>
+                    <br/><br/>
+                    <h3>0123456789</h3>
+                    <small><i>NIK</i></small>
+                    <br/><br/>
+                    <input id="logout" type="button" value="Keluar" data-theme="a" data-icon="home" data-mini="true" onclick="logout()" />
+                </div>
+            </div>
+            <form id="f_user" action="http://10.0.2.2/sipuji/" method="post">
+                <label for="notrans">Masukan nomor kendaraan:</label>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                        <input type="text" name="notrans" id="notrans" value="" data-theme="d" data-mini="true" data-inline="true" type="number" placeholder="Nomor" /> 
+                    </div>
+                    <div class="ui-block-b">
+                        <input type="text" name="idtrans" id="idtrans" value="" data-theme="d" data-mini="true" data-inline="true" placeholder="Kode Akhir" /> 
+                    </div>
+                    <div class="ui-block-c">
+                        <input id="submit" type="button" value="Submit" data-theme="e" data-icon="arrow-r" data-mini="true" data-inline="true" onclick="goTo()" />
+                    </div>
+                </div>
+            </form>          
+        </div>
+    </div>
+</body>
+</html>

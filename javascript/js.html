@@ -1,0 +1,119 @@
+    <script type="text/javascript">
+
+    var phone = {
+    	ring : function () {
+    		alert('Kriiiing... kriiiiing...');
+    	}
+    }
+
+    var myPhone = function() {
+    	alert('tuuuut');
+    }
+
+    myPhone.prototype = phone;
+
+    var iphone = new myPhone;
+    console.log(phone);
+
+
+    
+    MyPhone = {
+        ring : function(){
+            alert('hey');
+        }
+    }
+    
+    iphone.prototype.phone = function() {
+        alert('asdas');
+    };
+
+
+// start proto 
+    // function Person(){
+
+    // }
+
+    // Person.prototype = {
+    //     name : 'Nicholas',
+    //     age : 29,
+    //     job : 'Software Engineer', 
+    //     sayName : function () {
+    //         alert(this.name); 
+    //     }
+    // };
+
+    // var friend= new Person();
+    // Person.prototype.sayName = function(){ 
+    //     alert("hi");
+    // }; 
+
+    // friend.sayName();
+// end proto
+
+
+        // tolong bikin implementasi dari telp yg dipunyai
+        // function MyFunction(message){
+        // 	this.message = message
+        // }
+        // MyFunction.prototype.Show = function(){
+        // 	alert (this.message);
+        // }
+        // var pesan1 = new MyFunction("Kriiiinnggg");
+        // pesan1.Show();
+
+        // var pesan2 = new MyFunction("tuuuut");
+        // pesan2.Show();
+
+        // function myCar(model){
+        //     this.name = model;
+        //     this.year = "2011";
+        //     this.model = this.name + " keren thn " +  this.year;
+
+        //     this.getInfo = function(){
+        //       return this.model;
+        //     };
+        //     // return false;
+        // };
+
+        // var car = new myCar("bmw");
+        // car.year = "1991";
+
+        // console.log(car.getInfo());
+
+        function obj(){
+            var ukurans = {
+                paths: "bukan alfath",
+                hello : "world"
+            };
+
+            var createObject = {
+                name:"alfath",
+                kerjaan:"ngoding",
+                hobby: function (kerjaan){
+                    if (kerjaan == "ngupil") {
+                        alert("yaak")
+                    } else {
+                        alert("ngoddiing tauk!")
+                    }
+                } ,
+                ipa : {
+                    matematika : ["9","99","100"],
+                    bhsInggris : ["7","80","85"],
+                    fisika : function(){
+                        alert("nilai fisika belum kelar tapi ranking A+");
+                    }
+                } ,
+                ukuran : ukurans 
+            }
+            return createObject;
+        };
+
+var ob = new obj();
+ob.ukuran = {
+    paths : "alfath",
+    hello : "Dirk",
+    Jadi : "ok"
+}
+// var mtkBhs = parseInt(ob.ipa.matematika[1]) + parseInt(ob.ipa.matematika[2]);
+console.log(ob)
+        </script>

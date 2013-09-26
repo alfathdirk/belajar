@@ -1,0 +1,44 @@
+<html>
+<script type="text/javascript" src="http://localhost/playground/themes/default/js/jquery.tools.min.js"></script>
+<script>
+	$(function(){
+
+		var a = parseInt($('input[name="angka1"]').val());
+		var b = parseInt($('input[name="angka2"]').val());
+		
+
+		$('input[name="angka1"]' && 'input[name="angka2"]').blur(function(){
+			alert(parseInt($('input[name="angka1"]').val())+parseInt($('input[name="angka2"]').val()))
+		});
+
+
+		
+
+
+	// 	var b = parseInt($('input[name="angka2"]').val());
+	// 	var c = parseInt(a + b)
+
+
+		// $('#form1').submit(function(e){
+		// 	if($(parseInt('input[name="angka1"]')).val() == '' || $(parseInt('input[name="angka2"]')).val() == ''){
+		// 		alert('isi yang kosong');
+		// 	}else{
+		// 		alert (parseInt($('input[name="angka1"]').val())+parseInt($('input[name="angka2"]').val()));
+		// 	}
+
+				// return e.preventDefault();
+		// });
+
+	});
+</script>
+
+<form action="" method='post' id="form1">
+	<input type="text" name="angka1" value="" ><br>
+	<input type="" name="angka2" value=""><br>
+	<div class="container"> </div>
+</form>
+
+
+</html>
+
+

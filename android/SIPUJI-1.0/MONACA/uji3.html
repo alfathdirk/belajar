@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="plugins/plugin-loader.js"></script>
+    <link rel="stylesheet" href="plugins/plugin-loader.css">
+    <style type="text/css">
+    .container{
+        left:5%;
+        width: 90%;
+    }
+    
+    #prauji-table {
+       font-size: 60%; 
+    }
+    .ui-table-reflow .ui-responsive {
+        display: table-row-group;
+    }
+    .table-stroke thead th {
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+    .table-stroke tbody th,
+    .table-stroke tbody td {
+        border-bottom: 1px solid rgba(0, 0, 0, .05);
+    }
+    .short-select {
+        width: 90px;
+    }
+    .ui-btn-inner .ui-btn-text {
+        font-size: 9px;
+        padding: 0;
+    }
+    .ui-mini {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    div.ui-slider-switch.ui-slider-mini {
+        height: 20px;
+        width: 4em;
+    }
+    .ui-slider-mini span.ui-slider-label {
+        font-size: 11px;
+    }
+    div.ui-slider-switch.ui-slider-mini .ui-slider-inneroffset {
+        margin: 0 11px 0 10px;
+    }
+    div.ui-slider-switch.ui-slider-mini .ui-slider-handle {
+        height: 18px;
+        margin: 1px 0 0 -9px;
+        width: 18px;
+    }
+    input.ui-input-text.ui-mini, textarea.ui-input-text.ui-mini {
+        margin: 0.25em 0;
+    }
+    input.ui-mini, .ui-mini input, textarea.ui-mini {
+        font-size: 100%;
+    }
+    input.ui-input-text, textarea.ui-input-text {
+        line-height: 1.6;
+        padding: 0.4em;
+        width: 70%;
+    }
+    input.ui-input-text, textarea.ui-input-text {
+        display: inline;
+    }
+    label.ui-input-text {
+        display: inline;
+        font-size: 100%;
+        line-height: 1.4;
+        margin: 0 0 0.3em;
+    }
+    </style>
+    <script>
+        // Set virtual screen width size to 320 pixels 
+        monaca.viewport({width: 320});
+
+        function goToBack() {
+            monaca.pushPage("confirm.html?p=uji")
+        }
+        
+        function goToHome() {
+            monaca.pushPage("user.html?p=uji")
+        }
+    </script>
+</head>
+<body>
+    <div data-role="page"> 
+        <div data-role="content" class="container">
+            <h4>Formulir Uji Sistem Rem</h4>
+            <table data-role="table" id="prauji-table" data-mode="reflow" class="ui-responsive table-stroke ui-table ui-table-reflow">
+                <thead>
+                    <tr>
+                        <th data-priority="1">No.</th>
+                        <th data-priority="persist">PENGUJIAN</th>
+                        <th data-priority="2">SPESIFIKASI</th>
+                        <th data-priority="3">HASIL UJI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>13.</th>
+                        <th>SISTEM REM</th>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>a.</td>
+                        <td>Rem Utama (kg)</td>
+                        <td>Gaya Rem≥50% Berat Sumbu (Kg)</td>
+                        <td>
+                            <label for="input-13a12">S1</label>
+                            <input type="text" name="input-13a12" id="input-13a12" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-13a12">%</label>
+                            <br/>
+                            <label for="input-13a22">S2</label>
+                            <input type="text" name="input-13a22" id="input-13a22" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-13a22">%</label>
+                            <br/>
+                            <label for="input-13a32">S3</label>
+                            <input type="text" name="input-13a32" id="input-13a32" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-13a32">%</label>
+                            <br/>
+                            <label for="input-13a42">S4</label>
+                            <input type="text" name="input-13a42" id="input-13a42" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-13a42">%</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>b.</td>
+                        <td>Selisih Gaya Rem Roda Kiri dan Kanan Pada 1 Sumbu (%)</td>
+                        <td>8% (Maksimal)</td>
+                        <td>
+                            <label for="input-13b12">S1</label>
+                            <input type="text" name="input-13b12" id="input-13b12" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-13b12">%</label>
+                            <br/>
+                            <label for="input-13b22">S2</label>
+                            <input type="text" name="input-13b22" id="input-13b22" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-13b22">%</label>
+                            <br/>
+                            <label for="input-13b32">S3</label>
+                            <input type="text" name="input-13b32" id="input-13b32" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-13b32">%</label>
+                            <br/>
+                            <label for="input-13b42">S4</label>
+                            <input type="text" name="input-13b42" id="input-13b42" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-13b42">%</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>c.</td>
+                        <td>Efisiensi Rem Parkir</td>
+                        <td>Mbl. Pnp. Min 12%</td>
+                        <td>
+                            <input type="text" name="input-13c12" id="input-13c12" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-13c12">°</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>(Hpb)</td>
+                        <td>Mbl. Brg. Min 16%</td>
+                        <td>
+                            <input type="text" name="input-13c22" id="input-13c22" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-13c22">°</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>14.</th>
+                        <th>SPEEDOMETER (-/+)</th>
+                        <td>-10% S/D 15% (36 Km/Jam s/d 46 Km/Jam)</td>
+                        <td>
+                            <input type="text" name="input-14a12" id="input-14a12" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-14a12">%</label>
+                            <br/>
+                            <input type="text" name="input-14a22" id="input-14a22" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-14a22">Km/Jam</label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div data-role="fieldcontain">
+                <label for="textarea">Cacatan Penguji:</label>
+            	<textarea cols="40" rows="8" name="catatan3" id="catatan3"></textarea>
+            </div>
+            <br/>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <input id="submit" type="button" value="Simpan" data-theme="e" data-icon="check" data-mini="true" onclick="goToHome()" />
+                </div>
+                <div class="ui-block-b">
+                    <input id="cancel" type="button" value="Batal" data-theme="d" data-icon="delete" data-mini="true" onclick="goToBack()" />
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

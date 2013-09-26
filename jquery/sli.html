@@ -1,0 +1,114 @@
+<style>
+.fadein {
+	position:relative;
+	/*height:320px;*/
+	/*width:1280px;*/
+}
+
+.fadein img {
+	position:absolute;
+	left:0;
+	top:0;
+} 
+
+
+li {
+	list-style: none;
+	display: inline-block;
+}
+
+.none {
+	display: none;
+	/*color: red;*/
+}
+
+.active {
+	display: block;
+}
+
+</style>
+<script type="text/javascript" src="./jquery-1.7.2.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+// 	$('.fadein img:gt(1)').hide();
+
+// 	setInterval(function () {
+// 		$('.fadein :first-child').fadeOut()
+// 		.next('img')
+// 		.fadeIn()
+// 		.end()
+// 		.appendTo('.fadein');
+// }, 4000); // 4 detik
+
+
+	// $('#word').hide();
+
+	$('div').each(function(index){
+		$('div').hide();
+	});
+
+	$('a').click(function() {
+		target = $(this).attr("data-target");
+		// console.log(target);
+		$('div').hide();
+		$(target).show();
+	});
+	return true;
+
+	// $(function  () {
+	// // body...
+	// $(".product-detail .subnav a.active").each(function(index) {
+	// 	$(".product-detail .subnav-target article").hide ().removeClass ("active");
+	// 	$($(this).attr("data-target")).show ().addClass ("active");
+	// }); 
+
+	// $(".product-detail .subnav a").click (function () {
+	// 	$(this).parent ().siblings ().children ("a").removeClass ("active");
+	// 	$(this).addClass ("active");
+
+	// 	target = $(this).attr("data-target");
+	// 	$(".product-detail .subnav-target").css ("height", $(target).height () + "px");
+	// 	$(".product-detail .subnav-target article.active").fadeOut (250, function () {
+	// 		$(".product-detail .subnav-target article.active").removeClass ("active");
+	// 		$(target).addClass ("active").fadeIn (250);
+	// 	});
+
+	// 	return false;
+	// });
+// });
+
+
+		// $('.world').hide();
+
+
+	// alert('asd');
+	// console.log(this);
+
+});
+
+
+</script>
+</head>
+<body>
+	<!-- <div class="fadein"> -->
+	<!-- <img src="img/demo1.jpg"> -->
+	<!-- <img src="img/demo2.jpg"> -->
+	<!-- <img src="img/demo3.jpg"> -->
+	<!-- <img src="img/demo4.jpg"> -->
+	<!-- </div> -->
+	<ul class="nav">
+		<li><a href="#" data-target=".hello">hello</a></li>
+		<li><a href="#" data-target=".world">world</a></li>
+		<li><a href="#" data-target=".hello">Ngek</a></li>
+	</ul>
+
+	<div class="hello">
+		Haloo Boss
+	</div>
+
+	<div class="world">
+		world Boss
+	</div>
+
+</body>

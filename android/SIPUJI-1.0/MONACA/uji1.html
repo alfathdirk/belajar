@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="plugins/plugin-loader.js"></script>
+    <link rel="stylesheet" href="plugins/plugin-loader.css">
+    <style type="text/css">
+    .container{
+        left:5%;
+        width: 90%;
+    }
+    
+    #prauji-table {
+       font-size: 60%; 
+    }
+    .ui-table-reflow .ui-responsive {
+        display: table-row-group;
+    }
+    .table-stroke thead th {
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+    .table-stroke tbody th,
+    .table-stroke tbody td {
+        border-bottom: 1px solid rgba(0, 0, 0, .05);
+    }
+    .short-select {
+        width: 90px;
+    }
+    .ui-btn-inner .ui-btn-text {
+        font-size: 9px;
+        padding: 0;
+    }
+    .ui-mini {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    div.ui-slider-switch.ui-slider-mini {
+        height: 20px;
+        width: 4em;
+    }
+    .ui-slider-mini span.ui-slider-label {
+        font-size: 11px;
+    }
+    div.ui-slider-switch.ui-slider-mini .ui-slider-inneroffset {
+        margin: 0 11px 0 10px;
+    }
+    div.ui-slider-switch.ui-slider-mini .ui-slider-handle {
+        height: 18px;
+        margin: 1px 0 0 -9px;
+        width: 18px;
+    }
+    input.ui-input-text.ui-mini, textarea.ui-input-text.ui-mini {
+        margin: 0.25em 0;
+    }
+    input.ui-mini, .ui-mini input, textarea.ui-mini {
+        font-size: 100%;
+    }
+    input.ui-input-text, textarea.ui-input-text {
+        line-height: 1.6;
+        padding: 0.4em;
+        width: 70%;
+    }
+    input.ui-input-text, textarea.ui-input-text {
+        display: inline;
+    }
+    label.ui-input-text {
+        display: inline;
+        font-size: 100%;
+        line-height: 1.4;
+        margin: 0 0 0.3em;
+    }
+    </style>
+    <script>
+        // Set virtual screen width size to 320 pixels 
+        monaca.viewport({width: 320});
+
+        function goToBack() {
+            monaca.pushPage("confirm.html?p=uji")
+        }
+        
+        function goToHome() {
+            monaca.pushPage("user.html?p=uji")
+        }
+    </script>
+</head>
+<body>
+    <div data-role="page"> 
+        <div data-role="content" class="container">
+            <h4>Formulir Uji Emisi Gas Buang</h4>
+            <table data-role="table" id="prauji-table" data-mode="reflow" class="ui-responsive table-stroke ui-table ui-table-reflow">
+                <thead>
+                    <tr>
+                        <th data-priority="1">No.</th>
+                        <th data-priority="persist">PENGUJIAN</th>
+                        <th data-priority="2">SPESIFIKASI</th>
+                        <th data-priority="3">HASIL UJI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>7.</th>
+                        <th>KEBISINGAN SUARA</th>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Klakson</td>
+                        <td>90 dBA - 118 dBA</td>
+                        <td>
+                            <input type="text" name="input-7a2" id="input-7a2" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-7a2">dBA</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>8.</th>
+                        <th>EMISI GAS BUANG</th>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>a.</td>
+                        <td>Mesin Diesel &gt; 2010</td>
+                        <td>70%</td>
+                        <td>
+                            <input type="text" name="input-8a12" id="input-8a12" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-8a12">%</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>(Ketebalan Asap) ≥ 2010</td>
+                        <td>50%</td>
+                        <td>
+                            <input type="text" name="input-8a22" id="input-8a22" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-8a22">%</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>b.</td>
+                        <td>Mesin Bensin &gt; 2007</td>
+                        <td>CO=4,5%;HC=1200 PPM</td>
+                        <td>
+                            <input type="text" name="input-8b12" id="input-8b12" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-8b12">PPM</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>(Ketebalan Asap) ≥ 2007</td>
+                        <td>CO=1,5%;HC=200 PPM</td>
+                        <td>
+                            <input type="text" name="input-8b22" id="input-8b22" value="1" data-mini="true" data-inline="true" type="number" />
+                            <label for="input-8b22">PPM</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>9.</td>
+                        <th>BAWAH KENDARAAN</td>
+                        <td><div class="short-select"></div></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>a.</td>
+                        <td>Sistem Kemudi</td>
+                        <td>Tingkat Keausan</td>
+                        <td>
+                            <select name="select-9a2" id="select-9a2" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>b.</td>
+                        <td>Sistem Suspensi</td>
+                        <td>Berfungsi</td>
+                        <td>
+                            <select name="select-9b2" id="select-9b2" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>c.</td>
+                        <td>Saluran Sistem Rem</td>
+                        <td>Tidak Bocor</td>
+                        <td>
+                            <select name="select-9c2" id="select-9c2" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>d.</td>
+                        <td>Sistem Penerus Daya</td>
+                        <td>Tidak Keausan</td>
+                        <td>
+                            <select name="select-9d2" id="select-9d2" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>e.</td>
+                        <td>Mesin dan Transmisi</td>
+                        <td>Tidak Bocor</td>
+                        <td>
+                            <select name="select-9e2" id="select-9e2" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>f.</td>
+                        <td>Tangki & S. Bhn. Bakar</td>
+                        <td>Tidak Bocor</td>
+                        <td>
+                            <select name="select-9f2" id="select-9f2" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>g.</td>
+                        <td>Saluran pp. Gas Buang</td>
+                        <td>Tidak Bocor & Arah Sesuai</td>
+                        <td>
+                            <select name="select-9g2" id="select-9g2" data-mini="true" data-theme="d" data-role="slider">
+                                <option value="TL">TL</option>
+                                <option value="L" SELECTED>L</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div data-role="fieldcontain">
+                <label for="textarea">Cacatan Penguji:</label>
+                <textarea cols="40" rows="8" name="catatan4" id="catatan4"></textarea>
+            </div>
+            <br/>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <input id="submit" type="button" value="Simpan" data-theme="e" data-icon="check" data-mini="true" onclick="goToHome()" />
+                </div>
+                <div class="ui-block-b">
+                    <input id="cancel" type="button" value="Batal" data-theme="d" data-icon="delete" data-mini="true" onclick="goToBack()" />
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

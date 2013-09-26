@@ -1,0 +1,32 @@
+<html>
+<head>
+	<script type="text/javascript" src="../jquery/jquery-1.7.2.min.js"></script> 
+	<title></title>
+</head>
+
+<script type="text/javascript">
+$(function() {
+
+	$('.log').keypress(function(e){
+		
+		 var w = e.which ;
+		var line = $(this).val();
+		
+				console.log(line.length-1);
+		setTimeout(function(){
+			for (var i = 0 ; i < line.length ; i++) {
+			};
+		});
+
+	})
+
+})
+
+</script>
+<body>
+<form>
+
+<input type="text" class="log">
+</form>
+</body>
+</html>

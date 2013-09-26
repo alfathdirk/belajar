@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="plugins/plugin-loader.js"></script>
+    <link rel="stylesheet" href="plugins/plugin-loader.css">
+    <style type="text/css">
+    .container{
+        left:5%;
+        width: 90%;
+    }
+    
+    @media ( min-width: 40em ) {
+        /* Show the table header rows and set all cells to display: table-cell */ 
+    	.my-custom-breakpoint td,
+    	.my-custom-breakpoint th,
+    	.my-custom-breakpoint tbody th,
+    	.my-custom-breakpoint tbody td,
+    	.my-custom-breakpoint thead td,
+    	.my-custom-breakpoint thead th {
+    		display: table-cell;
+    		margin: 0;
+    	}
+    	/* Hide the labels in each cell */ 
+    	.my-custom-breakpoint td .ui-table-cell-label,
+    	.my-custom-breakpoint th .ui-table-cell-label { 
+    		display: none;
+    	}
+    }
+    
+    #confirm-table {
+       font-size: 75%; 
+    }
+    .ui-table-reflow .ui-responsive {
+        display: table-row-group;
+    }
+    .table-stroke thead th {
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+    .table-stroke tbody th,
+    .table-stroke tbody td {
+        border-bottom: 1px solid rgba(0, 0, 0, .05);
+    }
+    </style>
+    <script>
+        // Set virtual screen width size to 320 pixels 
+        monaca.viewport({width: 320});
+        
+        function goToBack() {
+            monaca.pushPage("user.html?p="+monaca.queryParams['p'])
+        }
+        
+        function goTo() {
+            monaca.pushPage(monaca.queryParams['p']+".html")
+        }
+    </script>
+</head>
+<body>
+    <div data-role="page"> 
+        <div data-role="content" class="container">
+            <h4>Informasi data kendaraan</h4>
+            <table data-role="table" id="confirm-table" data-mode="reflow" class="ui-responsive table-stroke ui-table ui-table-reflow">
+                <tbody>
+                    <tr>
+                        <th data-priority="1">a.</th>
+                        <td data-priority="persist">Nama Pemilik</td>
+                        <td data-priority="2">:</td>
+                        <td data-priority="3"><i>Iwan Threads</i></td>
+                    </tr>
+                    <tr>
+                        <th>b.</th>
+                        <td>Alamat</td>
+                        <td>:</td>
+                        <td><i>Cibangkong kaler, Bandung</i></td>
+                    </tr>
+                    <tr>
+                        <th>c.</th>
+                        <td>Merk/Tipe/Tahun</td>
+                        <td>:</td>
+                        <td><i>Mercy/230c/1996</i></td>
+                    </tr>
+                    <tr>
+                        <th>d.</th>
+                        <td>Jenis Kendaraan</td>
+                        <td>:</td>
+                        <td><i>Truck</i></td>
+                    </tr>
+                    <tr>
+                        <th>e.</th>
+                        <td>Jenis Bahan Bakar</td>
+                        <td>:</td>
+                        <td><i>Solar</i></td>
+                    </tr>
+                    <tr>
+                        <th>f.</th>
+                        <td>Jenis Rumah-rumah</td>
+                        <td>:</td>
+                        <td><i>Terpal</i></td>
+                    </tr>
+                    <tr>
+                        <th>g.</th>
+                        <td>Nomor Kendaraan</td>
+                        <td>:</td>
+                        <td><i>D 1234 EF</i></td>
+                    </tr>
+                    <tr>
+                        <th>h.</th>
+                        <td>Nomor Uji Kendaraan</td>
+                        <td>:</td>
+                        <td><i>UK123</i></td>
+                    </tr>
+                    <tr>
+                        <th>i.</th>
+                        <td>Nomor Rangka Landasan</td>
+                        <td>:</td>
+                        <td><i>R123</i></td>
+                    </tr>
+                    <tr>
+                        <th>j.</th>
+                        <td>Nomor Mesin</td>
+                        <td>:</td>
+                        <td><i>M1234567</i></td>
+                    </tr>
+                    <tr>
+                        <th>k.</th>
+                        <td>Bahan Karoseri</td>
+                        <td>:</td>
+                        <td><i>Besi</i></td>
+                    </tr>
+                    <tr>
+                        <th>l.</th>
+                        <td>Tanggal Pemeriksaan</td>
+                        <td>:</td>
+                        <td><i>21 Agustus 2012</i></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br/>
+            <p>Apakah data sudah sesuai?</p>
+            <div data-role="controlgroup" data-type="horizontal">
+                <a href="#" data-role="button" data-theme="e" data-icon="check" data-mini="true" onclick="goTo()">Ya</a>
+                <a href="#" data-role="button" data-theme="e" data-icon="back" data-mini="true" onclick="goToBack()">Tidak</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
