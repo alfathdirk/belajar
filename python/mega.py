@@ -24,7 +24,7 @@ with open('log.txt') as f:
 	for x in range(0,len(content)):
 		if  content[x] == 'Firmware state: Disable\n' or content[x] == 'Firmware state: Offline\n' or (content[x] == 'Predictive Failure Count: '+ str(x+1)):
 			gmail_user = "hostune@gmail.com"
-			gmail_password = "HostunEGE2012"
+			gmail_password = ""
 			# $arr[] = content[x]
 			pesan_email = MIMEText(content[x]  + " on line " + str(x+1))
 			pesan_email['From'] = gmail_user
